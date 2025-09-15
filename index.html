@@ -3,33 +3,47 @@
 <head>
     <title>Subdomain Takeover PoC - Under Armour</title>
     <style>
-        body { font-family: Arial; margin: 40px; background: #f0f0f0; }
-        .alert { background: #ff6b6b; color: white; padding: 20px; border-radius: 5px; }
-        .details { background: white; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        body { font-family: Arial; margin: 40px; background: #f0f0f0; text-align: center; }
+        .alert { background: #ff6b6b; color: white; padding: 30px; border-radius: 10px; margin: 20px 0; }
+        .details { background: white; padding: 30px; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .success { color: #27ae60; font-size: 24px; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="alert">
-        <h1>🚨 SUBDOMAIN TAKEOVER DETECTED 🚨</h1>
+        <h1>🚨 SUBDOMAIN TAKEOVER SUCCESSFUL 🚨</h1>
     </div>
+    
     <div class="details">
-        <h2>Vulnerability Details</h2>
-        <p><strong>Type:</strong> Fastly Subdomain Takeover</p>
-        <p><strong>Domain:</strong> <span id="domain"></span></p>
+        <h2 class="success">✅ PROOF OF CONCEPT CONFIRMED</h2>
+        <p><strong>Vulnerable Domain:</strong> api-staging.ecm.underarmour.com</p>
+        <p><strong>Takeover Method:</strong> GitHub Pages Custom Domain</p>
         <p><strong>Researcher:</strong> [karnalking01]</p>
-        <p><strong>Severity:</strong> HIGH</p>
         <p><strong>Date:</strong> September 15, 2025</p>
-        <h3>Impact:</h3>
-        <ul>
-            <li>Complete subdomain control</li>
-            <li>Phishing potential using legitimate domain</li>
-            <li>Cookie/session hijacking risks</li>
+        <p><strong>Original Service:</strong> Fastly (Dangling CNAME)</p>
+        
+        <h3>🔥 SECURITY IMPACT:</h3>
+        <ul style="text-align: left; max-width: 500px; margin: 0 auto;">
+            <li>Complete control over api-staging.ecm.underarmour.com</li>
+            <li>Potential phishing using legitimate Under Armour subdomain</li>
+            <li>Cookie/session hijacking from *.underarmour.com</li>
             <li>Brand reputation damage</li>
+            <li>User trust compromise</li>
         </ul>
-        <p><em>This is a security research demonstration for responsible disclosure.</em></p>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #ecf0f1; border-radius: 5px;">
+            <p><strong>⚠️ RESPONSIBLE DISCLOSURE:</strong></p>
+            <p>This demonstration is for security research purposes only.<br>
+            Vulnerability reported through official bug bounty program.</p>
+        </div>
     </div>
+    
     <script>
-        document.getElementById('domain').textContent = window.location.hostname;
+        // Add some dynamic proof
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Subdomain takeover successful on:', window.location.hostname);
+            console.log('Original Fastly CNAME redirected to GitHub Pages');
+        });
     </script>
 </body>
 </html>
