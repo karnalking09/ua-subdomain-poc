@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subdomain Takeover PoC - Under Armour</title>
+    <style>
+        body { font-family: Arial; margin: 40px; background: #f0f0f0; }
+        .alert { background: #ff6b6b; color: white; padding: 20px; border-radius: 5px; }
+        .details { background: white; padding: 20px; margin: 20px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="alert">
+        <h1>🚨 SUBDOMAIN TAKEOVER DETECTED 🚨</h1>
+    </div>
+    <div class="details">
+        <h2>Vulnerability Details</h2>
+        <p><strong>Type:</strong> Fastly Subdomain Takeover</p>
+        <p><strong>Domain:</strong> <span id="domain"></span></p>
+        <p><strong>Researcher:</strong> [karnalking01]</p>
+        <p><strong>Severity:</strong> HIGH</p>
+        <p><strong>Date:</strong> September 15, 2025</p>
+        <h3>Impact:</h3>
+        <ul>
+            <li>Complete subdomain control</li>
+            <li>Phishing potential using legitimate domain</li>
+            <li>Cookie/session hijacking risks</li>
+            <li>Brand reputation damage</li>
+        </ul>
+        <p><em>This is a security research demonstration for responsible disclosure.</em></p>
+    </div>
+    <script>
+        document.getElementById('domain').textContent = window.location.hostname;
+    </script>
+</body>
+</html>
